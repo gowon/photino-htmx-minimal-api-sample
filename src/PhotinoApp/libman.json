@@ -22,7 +22,9 @@
       "library": "tailwindcss@3.4.4",
       "files": [
         "base.css",
-        "base.min.css"
+        "base.min.css",
+        "lib/index.js",
+        "lib/index.min.js"
       ],
       "destination": "wwwroot/lib/tailwindcss/"
     }

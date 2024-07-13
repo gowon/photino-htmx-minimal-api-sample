@@ -1,0 +1,18 @@
+﻿@using SimplePhotinoApp.Models
+
+<!-- Loop through the movies -->
+@foreach (WeatherForecast forecast in Model?.Forecasts ?? Enumerable.Empty<WeatherForecast>())
+{
+    <WeatherForecastCard Model="@forecast" />
+}
+
+@code 
+{
+    [Parameter] public WeatherForecastListParameters Model { get; set; } = new();
+
+    public class WeatherForecastListParameters
+    {
+        public IEnumerable<WeatherForecast>? Forecasts { get; set; }
+        public int TotalCount { get; set; }
+    }
+}

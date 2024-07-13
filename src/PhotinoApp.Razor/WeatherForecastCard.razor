@@ -1,0 +1,13 @@
+﻿@using SimplePhotinoApp.Models
+
+<div class=" col-xs-12 col-sm-6 col-lg-4 movie-card">
+    <article style="padding-bottom:20px">
+        <h3 class="card-title">@Model.Summary</h3>
+        <p>@Model.Date.ToLongDateString() -  @Model.TemperatureF degrees F</p>
+    </article>
+</div>
+
+@code
+{
+    [Parameter] public WeatherForecast Model { get; set; } = new();
+}

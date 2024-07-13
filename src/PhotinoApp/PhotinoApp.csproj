@@ -22,13 +22,29 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\**" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Carter" Version="8.2.1" />
     <PackageReference Include="NLog" Version="5.3.2" />
     <PackageReference Include="NLog.Extensions.Hosting" Version="5.3.11" />
     <PackageReference Include="NLog.Extensions.Logging" Version="5.3.11" />
     <PackageReference Include="NLog.Layouts.ClefJsonLayout" Version="1.0.0" />
     <PackageReference Include="Photino.NET" Version="3.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PhotinoApp.Core\PhotinoApp.Core.csproj" />
+    <ProjectReference Include="..\PhotinoApp.Razor\PhotinoApp.Razor.csproj" />
   </ItemGroup>
 
 </Project>

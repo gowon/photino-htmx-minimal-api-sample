@@ -3,11 +3,12 @@
 using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Text;
+using Carter;
+using Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server;
 using Microsoft.AspNetCore.Hosting.Server.Features;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
@@ -118,7 +119,7 @@ internal class Program
         while (IPGlobalProperties
                .GetIPGlobalProperties()
                .GetActiveTcpListeners()
-               .Any(x => x.Port == port))
+               .Any(endPoint => endPoint.Port == port))
         {
             if (port > maxPort)
             {
@@ -150,7 +151,12 @@ internal class Program
                     });
                 });
 
-                host.ConfigureServices((context, services) => { services.AddRazorComponents(); });
+                host.ConfigureServices((context, services) =>
+                {
+                    services.AddRazorComponents();
+                    services.AddCarter();
+                    services.AddSingleton<WeatherForecastService>();
+                });
 
                 host.Configure((context, app) =>
                 {
@@ -170,15 +176,7 @@ internal class Program
                                 Path.Combine(context.HostingEnvironment.ContentRootPath, "wwwroot"))
                     });
 
-                    app.UseEndpoints(builder =>
-                    {
-                        builder.MapGet("/hello-world", (IConfiguration configuration) =>
-                        {
-                            var root = configuration as IConfigurationRoot;
-                            //return Results.Text(root!.GetDebugView());
-                            return Results.Text("Hello World!!!");
-                        });
-                    });
+                    app.UseEndpoints(builder => { builder.MapCarter(); });
                 });
             });
     }

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Photino for .NET Demo</title>
-    <link rel="stylesheet" href="assets/main.css" />
+    <!--<link rel="stylesheet" href="assets/main.css" />-->
+    <link href="lib/daisyui/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!--<script src="lib/tailwindcss/lib/index.min.js"></script>-->
+    <script src="//cdn.tailwindcss.com"></script>
+    <script src="lib/htmx/dist/htmx.min.js"></script>
 </head>
 <body>
     <img src="assets/photino-logo-full.png" alt="Photino" class="logo center" />
@@ -13,11 +17,23 @@
     <h1 class="text-center">Hello to Photino for .NET</h1>
 
     <p class="text-center">
-        This is a static HTML file with CSS and JavaScript, served from a local web root. 
-        Click on the button below to send a message to the backend. 
+        This is a static HTML file with CSS and JavaScript, served from a local web root.
+        Click on the button below to send a message to the backend.
         It will respond and send a message back to the UI.
     </p>
     <button class="primary center" onclick="callDotNet()">Call .NET</button>
+
+    
+    
+    <button class="primary center"
+            hx-post="/weather-card/5"
+            hx-trigger="click"
+            hx-target="#search-results">
+        Generate Forecasts
+    </button>
+
+    <div id="search-results"></div>
+
 
     <script src="app://dynamic.js"></script>
 
