@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "htmx.org@2.0.1",
+      "files": [
+        "dist/htmx.js",
+        "dist/htmx.min.js"
+      ],
+      "destination": "wwwroot/lib/htmx/"
+    },
+    {
+      "library": "daisyui@4.12.10",
+      "files": [
+        "dist/full.css",
+        "dist/full.min.css"
+      ],
+      "destination": "wwwroot/lib/daisyui/"
+    },
+    {
+      "library": "tailwindcss@3.4.4",
+      "files": [
+        "base.css",
+        "base.min.css"
+      ],
+      "destination": "wwwroot/lib/tailwindcss/"
+    }
+  ]
+}

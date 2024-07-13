@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PhotinoApp": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}
