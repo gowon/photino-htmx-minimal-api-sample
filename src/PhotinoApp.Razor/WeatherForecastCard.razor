@@ -1,10 +1,10 @@
 ﻿@using SimplePhotinoApp.Models
 
-<div class=" col-xs-12 col-sm-6 col-lg-4 movie-card">
-    <article style="padding-bottom:20px">
-        <h3 class="card-title">@Model.Summary</h3>
+<div class="card bg-neutral text-neutral-content w-96">
+    <div class="card-body items-center text-center">
+        <h2 class="card-title">@Model.Summary</h2>
         <p>@Model.Date.ToLongDateString() -  @Model.TemperatureF degrees F</p>
-    </article>
+    </div>
 </div>
 
 @code

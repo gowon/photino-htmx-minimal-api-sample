@@ -101,6 +101,8 @@ internal class Program
             //.Load($"{internalHostPath}/index.html"); // Can be used with relative path strings or "new URI()" instance to load a website.
             .Load(internalHostPath); // Can be used with relative path strings or "new URI()" instance to load a website.
 
+        
+
         window.WindowClosing += (sender, eventArgs) =>
         {
             host.StopAsync();

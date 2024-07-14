@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "seqcli": {
+      "version": "2024.2.845",
+      "commands": [
+        "seqcli"
+      ],
+      "rollForward": false
+    },
+    "husky": {
+      "version": "0.6.4",
+      "commands": [
+        "husky"
+      ],
+      "rollForward": false
+    },
+    "microsoft.web.librarymanager.cli": {
+      "version": "2.1.175",
+      "commands": [
+        "libman"
+      ],
+      "rollForward": false
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "photinoapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css:build": "npx tailwind build -i ./wwwroot/assets/base.css  -o ./wwwroot/lib/tailwindcss/tailwind.css",
+    "css:build-min": "npx tailwind build -i ./wwwroot/assets/base.css  -o ./wwwroot/lib/tailwindcss/tailwind.min.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.12.10",
+    "eslint": "^9.7.0",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
+  },
+  "-vs-binding": {
+    "BeforeBuild": [
+      "css:build"
+    ]
+  }
+}
